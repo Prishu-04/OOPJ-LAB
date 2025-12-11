@@ -3,9 +3,9 @@ class grade{
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter your number: ");
-        int num = scanner.nextLine();
+        int num = scanner.nextInt();
         if(num>=90 &&num<=100){
-            System.println("Grade = O");
+            System.out.println("Grade = O");
         }else if(num>=80 && num<90){
             System.out.println("Grade = E");
         }else if(num>=70 && num<80){
