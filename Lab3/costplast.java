@@ -39,7 +39,7 @@ class Box3D extends Sheet2D {
 }
 
 // Main class
-public class PlasticCost {
+public class costplast {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 

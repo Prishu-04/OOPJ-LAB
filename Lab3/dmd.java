@@ -20,7 +20,7 @@ class Cherry extends Apple {
 }
 
 // Main class
-public class DynamicMethodDispatch {
+public class dmd {
     public static void main(String[] args) {
 
         Apple ref;   // Base class reference

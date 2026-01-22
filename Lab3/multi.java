@@ -37,7 +37,7 @@ class WoodBox extends Box {
 }
 
 // Main class
-public class MultiLevelInheritanceDemo {
+public class multi {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
