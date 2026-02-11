@@ -1,9 +1,3 @@
-//-Define an interface with three methods – earnings(), deductions() and bonus()
-//and define a Java class ‘Manager’ which uses this interface without implementing bonus() method.
-//Also define another Java class ‘Substaff’ which extends from ‘Manager’ class and implements
-//bonus() method. Write the complete program to find out earnings, deduction and bonus of a
-//sbstaff with basic salary amount entered by the user as per the following guideliness
-
 import java.util.Scanner;
 interface economic {
     double earnings();
@@ -42,10 +36,8 @@ class Substaff extends Manager {
 public class ques3 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
         System.out.print("Enter Basic Salary: ");
         double basicSalary = sc.nextDouble();
-
         Substaff s = new Substaff(basicSalary);
         s.display();
     }

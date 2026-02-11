@@ -24,6 +24,11 @@ public class sturecord {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter number of students: ");
         int n = sc.nextInt();
+        if (n <= 0) {
+            System.out.println("No students entered.");
+            sc.close();
+            return;
+        }
         Student[] s = new Student[n];
         for (int i = 0; i < n; i++) {
             System.out.println("\nEnter details of student " + (i + 1));
@@ -41,7 +46,8 @@ public class sturecord {
             s[i].display();
         }
         System.out.println("Student with lowest CGPA:");
-        System.out.println(s[minIndex].name);
+        System.out.println("Name: " + s[minIndex].name);
+        System.out.println("CGPA: " + s[minIndex].cgpa);
         sc.close();
     }
 }

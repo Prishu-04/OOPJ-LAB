@@ -6,6 +6,7 @@ class displaynr{
          String name=sc.nextLine();
          System.out.println("Enter your Rollno:");
          int rollno=sc.nextInt();
+         sc.nextLine();
          System.out.println("Enter your Section:");
          String section=sc.nextLine();
          System.out.println("Enter your Branch:");

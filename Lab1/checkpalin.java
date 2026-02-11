@@ -17,5 +17,4 @@ public class checkpalin {
             System.out.println("No, It is not palindrome");
         }
     }
-
 }

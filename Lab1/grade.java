@@ -12,7 +12,7 @@ class grade{
             System.out.println("Grade = A");
         }else if(num>=60 && num<70){
             System.out.println("Grade = B");
-        }else if(num>=60 && num<60){
+        }else if(num>=50 && num<60){
             System.out.println("Grade = C");
         }else{
             System.out.println("Grade = D");

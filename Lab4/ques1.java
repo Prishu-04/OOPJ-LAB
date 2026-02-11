@@ -23,7 +23,7 @@ class kiitian extends student {
         System.out.println("Course            : " + courseName);
     }
 }
-public class ques3 {
+public class ques1 {
     public static void main(String[] args) {
         kiitian k = new kiitian();
         k.getinput();
