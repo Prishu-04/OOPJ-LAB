@@ -1,77 +1,77 @@
 import java.util.Scanner;
-public class ques2 {
-    public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+public class Ques2 {
 
-        System.out.print("Enter first string: ");
-        String str1 = sc.nextLine();
-
-        System.out.print("Enter second string: ");
-        String str2 = sc.nextLine();
-
-        System.out.print("Enter a character to search: ");
-        char ch = sc.next().charAt(0);
-
-        // i) Change case
-        System.out.println("\n1. Change Case:");
-        String changedCase = "";
-        for (int i = 0; i < str1.length(); i++) {
-            char c = str1.charAt(i);
+    // 1. Change Case
+    public static void changeCase(String str) {
+        String result = "";
+        for (int i = 0; i < str.length(); i++) {
+            char c = str.charAt(i);
             if (Character.isUpperCase(c))
-                changedCase += Character.toLowerCase(c);
+                result += Character.toLowerCase(c);
+            else if (Character.isLowerCase(c))
+                result += Character.toUpperCase(c);
             else
-                changedCase += Character.toUpperCase(c);
+                result += c;
         }
-        System.out.println("Changed Case: " + changedCase);
+        System.out.println("Changed Case: " + result);
+    }
 
-        // ii) Reverse the string
-        System.out.println("\n2. Reverse String:");
+    // 2. Reverse String
+    public static String reverseString(String str) {
         String reverse = "";
-        for (int i = str1.length() - 1; i >= 0; i--) {
-            reverse += str1.charAt(i);
+        for (int i = str.length() - 1; i >= 0; i--) {
+            reverse += str.charAt(i);
         }
-        System.out.println("Reversed String: " + reverse);
+        return reverse;
+    }
 
-        // iii) Compare two strings
-        System.out.println("\n3. Compare Strings:");
-        if (str1.equals(str2))
+    // 3. Compare Strings
+    public static void compareStrings(String s1, String s2) {
+        if (s1.equals(s2))
             System.out.println("Strings are equal.");
         else
             System.out.println("Strings are not equal.");
+    }
 
-        // iv) Insert one string into another
-        System.out.println("\n4. Insert str2 into str1:");
-        System.out.print("Enter position to insert: ");
-        int pos = sc.nextInt();
-        String result = str1.substring(0, pos) + str2 + str1.substring(pos);
-        System.out.println("After Insertion: " + result);
+    // 4. Insert String
+    public static void insertString(String s1, String s2, int pos) {
+        if (pos >= 0 && pos <= s1.length()) {
+            String result = s1.substring(0, pos) + s2 + s1.substring(pos);
+            System.out.println("After Insertion: " + result);
+        } else {
+            System.out.println("Invalid Position!");
+        }
+    }
 
-        // v) Convert to upper and lower case
-        System.out.println("\n5. Upper and Lower Case:");
-        System.out.println("Uppercase: " + str1.toUpperCase());
-        System.out.println("Lowercase: " + str1.toLowerCase());
+    // 5. Convert Case
+    public static void convertCase(String str) {
+        System.out.println("Uppercase: " + str.toUpperCase());
+        System.out.println("Lowercase: " + str.toLowerCase());
+    }
 
-        // vi) Check character present and position
-        System.out.println("\n6. Character Search:");
-        int index = str1.indexOf(ch);
+    // 6. Character Search
+    public static void searchCharacter(String str, char ch) {
+        int index = str.indexOf(ch);
         if (index != -1)
             System.out.println("Character found at position: " + index);
         else
             System.out.println("Character not found.");
+    }
 
-        // vii) Check palindrome
-        System.out.println("\n7. Palindrome Check:");
-        if (str1.equals(reverse))
+    // 7. Palindrome Check
+    public static void checkPalindrome(String str) {
+        String reverse = reverseString(str);
+        if (str.equals(reverse))
             System.out.println("String is Palindrome.");
         else
             System.out.println("String is not Palindrome.");
+    }
 
-        // viii) Count words, vowels, consonants
-        System.out.println("\n8. Count Words, Vowels, Consonants:");
-
+    // 8. Count Words, Vowels, Consonants
+    public static void countAll(String str) {
         int vowels = 0, consonants = 0;
-        String lower = str1.toLowerCase();
+        String lower = str.toLowerCase();
 
         for (int i = 0; i < lower.length(); i++) {
             char c = lower.charAt(i);
@@ -83,11 +83,78 @@ public class ques2 {
             }
         }
 
-        int words = str1.trim().split("\\s+").length;
+        int words = str.trim().split("\\s+").length;
 
         System.out.println("Words: " + words);
         System.out.println("Vowels: " + vowels);
         System.out.println("Consonants: " + consonants);
+    }
+
+    // Main Method
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter first string: ");
+        String str1 = sc.nextLine();
+
+        System.out.print("Enter second string: ");
+        String str2 = sc.nextLine();
+
+        System.out.println("\n===== MENU =====");
+        System.out.println("1. Change Case");
+        System.out.println("2. Reverse String");
+        System.out.println("3. Compare Strings");
+        System.out.println("4. Insert String");
+        System.out.println("5. Convert Case");
+        System.out.println("6. Character Search");
+        System.out.println("7. Palindrome Check");
+        System.out.println("8. Count Words, Vowels, Consonants");
+        System.out.print("Enter your choice: ");
+
+        int choice = sc.nextInt();
+
+        switch (choice) {
+
+            case 1:
+                changeCase(str1);
+                break;
+
+            case 2:
+                System.out.println("Reversed String: " + reverseString(str1));
+                break;
+
+            case 3:
+                compareStrings(str1, str2);
+                break;
+
+            case 4:
+                System.out.print("Enter position to insert: ");
+                int pos = sc.nextInt();
+                insertString(str1, str2, pos);
+                break;
+
+            case 5:
+                convertCase(str1);
+                break;
+
+            case 6:
+                System.out.print("Enter character to search: ");
+                char ch = sc.next().charAt(0);
+                searchCharacter(str1, ch);
+                break;
+
+            case 7:
+                checkPalindrome(str1);
+                break;
+
+            case 8:
+                countAll(str1);
+                break;
+
+            default:
+                System.out.println("Invalid Choice!");
+        }
 
         sc.close();
     }
