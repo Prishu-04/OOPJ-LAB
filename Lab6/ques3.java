@@ -7,7 +7,7 @@ class NegativeNumberException extends Exception {
 class Processinput {
     public void Processinput(int num) throws NegativeNumberException {
         if (num < 0) {
-            throw new NegativeNumberException("Number should be positive");
+            throw new NegativeNumberException("Number cannot be negative");
         } else {
             System.out.println("Double value is " + (num * 2));
         }
@@ -22,7 +22,7 @@ public class ques3 {
         try {
             pi.Processinput(num);
         } catch (NegativeNumberException e) {
-            System.out.println("Exception caught: " + e);
+            System.out.println("Exception caught: " + e.getMessage());
         }
         sc.close();
     }
