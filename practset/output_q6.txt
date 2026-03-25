@@ -1,0 +1,2 @@
+This line is written to the file.
+Standard output has been redirected.
