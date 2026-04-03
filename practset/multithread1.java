@@ -27,7 +27,7 @@ class DeliveryProcess extends Thread {
 public class multithread1 {
     public static void main(String[] args) {
         OrderProcess order = new OrderProcess();
-        DeliveryProcess delivery = new DeliveryProcess()
+        DeliveryProcess delivery = new DeliveryProcess();
         order.start();
         try {
             order.join();
